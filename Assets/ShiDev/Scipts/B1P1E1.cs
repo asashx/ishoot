@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using DanmakU.Fireables;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine;
 namespace DanmakU {
 
 [AddComponentMenu("DanmakU/Danmaku Emitter")]
-public class DanmakuEmitter : DanmakuBehaviour {
+public class B1P1E1 : DanmakuBehaviour {
 
   public DanmakuPrefab DanmakuType;
 
@@ -16,9 +16,9 @@ public class DanmakuEmitter : DanmakuBehaviour {
   public Range FireRate = 5;
   public float FrameRate;
   public Arc Arc;
-  public Ring Ring;
-  public Line Line;
   public Circle Circle;
+  public Line Line;
+  public Ring Ring;
 
   float timer;
   DanmakuConfig config;
@@ -28,22 +28,20 @@ public class DanmakuEmitter : DanmakuBehaviour {
   /// Start is called on the frame when a script is enabled just before
   /// any of the Update methods is called the first time.
   /// </summary>
-  public virtual void Start() {
+  void Start() {
     if (DanmakuType == null) {
       Debug.LogWarning($"Emitter doesn't have a valid DanmakuPrefab", this);
       return;
     }
     var set = CreateSet(DanmakuType);
     set.AddModifiers(GetComponents<IDanmakuModifier>());
-    if (fireable == null) {
-      fireable = Arc.Of(Line).Of(Ring).Of(Circle).Of(set);
-    }
+    fireable = Arc.Of(Circle).Of(Line).Of(Ring).Of(set);
   }
 
   /// <summary>
   /// Update is called every frame, if the MonoBehaviour is enabled.
   /// </summary>
-  public virtual void Update() {
+  void Update() {
     if (fireable == null) return;
     var deltaTime = Time.deltaTime;
     if (FrameRate > 0) {
