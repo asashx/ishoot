@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7323865790622031720}
   - component: {fileID: 5816921885466667260}
   m_Layer: 0
-  m_Name: EnemyDanmakuPrefab
+  m_Name: EnemyDanmakuPrefab 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
