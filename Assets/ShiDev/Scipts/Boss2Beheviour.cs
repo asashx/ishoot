@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Boss1Behaviour : MonoBehaviour
+public class Boss2Behaviour : MonoBehaviour
 {
     [Header("Boss属性")]
     public int health = 100; // Boss 的生命值
@@ -66,18 +66,22 @@ public class Boss1Behaviour : MonoBehaviour
 
     void Phase1Behaviour()
     {
+        // 第一阶段的行为逻辑
+        // 比如移动、发射弹幕等
         StartCoroutine(MoveOnPathCoroutine(phase1PathPoints));
     }
 
     void Phase2Behaviour()
     {
-        StartCoroutine(SpinEmitterCoroutine1());
+        // 第二阶段的行为逻辑
+        // 比如移动、发射弹幕等
         StartCoroutine(MoveOnPathCoroutine(phase2PathPoints));
     }
 
     void Phase3Behaviour()
     {
-        StartCoroutine(SpinEmitterCoroutine2());
+        // 第三阶段的行为逻辑
+        // 比如移动、发射弹幕等
         StartCoroutine(MoveOnPathCoroutine(phase3PathPoints));
     }
 
@@ -114,37 +118,22 @@ public class Boss1Behaviour : MonoBehaviour
     }
 
     // 旋转发射器
-    IEnumerator SpinEmitterCoroutine1()
+    void SpinEmitter()
     {
-        // 获取当前phase
-        GameObject emitter = phaseObjects[phaseIndex];
+        // // 获取当前时间
+        // float currentTime = Time.time;
 
-        // 旋转发射器
-        while (true)
-        {
-            float t = Mathf.PingPong(Time.time, 30f);
-            float angularSpeed = Mathf.Lerp(-5f, 5f, t / 30f);
-            Debug.Log(angularSpeed);
-            emitter.transform.Rotate(Vector3.forward, angularSpeed * Time.deltaTime);
-            yield return null;
-        }
+        // // 获取发射器的初始旋转角度
+        // GameObject emitter = phaseObjects[phaseObjects.Length - phaseCnt];
+        // float initialRotation = emitter.transform.rotation.eulerAngles.z;
+
+        // // 计算旋转角度
+        // float rotationAngle = Mathf.Pow(Mathf.Round(currentTime - initialRotation), 2);
+
+        // // 旋转发射器
+        // emitter.transform.rotation = Quaternion.Euler(0, 0, initialRotation + rotationAngle);
+
     }
-
-    // 另一种旋转实现
-    IEnumerator SpinEmitterCoroutine2()
-    {
-        // 获取当前phase
-        GameObject emitter = phaseObjects[phaseIndex];
-
-        // 旋转发射器
-        while (true)
-        {
-            // 顺时针旋转
-            emitter.transform.Rotate(Vector3.forward, 1f);
-            yield return null;
-        }
-    }
-
     IEnumerator MoveOnPathCoroutine(GameObject[] path)
     {
         // 如果只有一个路径点，直接移动到该点并停止

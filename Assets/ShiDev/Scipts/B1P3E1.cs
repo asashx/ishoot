@@ -15,9 +15,7 @@ public class B1P3E1 : DanmakuBehaviour {
   public Color Color = Color.white;
   public Range FireRate = 5;
   public float FrameRate;
-  public Arc Arc;
   public Circle Circle;
-  public Line Line;
   public Ring Ring;
 
   float timer;
@@ -35,7 +33,9 @@ public class B1P3E1 : DanmakuBehaviour {
     }
     var set = CreateSet(DanmakuType);
     set.AddModifiers(GetComponents<IDanmakuModifier>());
-    fireable = Arc.Of(Circle).Of(Line).Of(Ring).Of(set);
+    if (fireable == null) {
+      fireable = Circle.Of(Ring).Of(set);
+    }
   }
 
   /// <summary>
@@ -57,6 +57,7 @@ public class B1P3E1 : DanmakuBehaviour {
         Color = Color
       };
       fireable.Fire(config);
+      Debug.Log("Fire");
       timer = 1f / FireRate.GetValue();
     }
   }

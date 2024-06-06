@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace DanmakU {
 
-[AddComponentMenu("DanmakU/Danmaku Emitter")]
 public class B1P1E2 : DanmakuBehaviour {
 
   public DanmakuPrefab DanmakuType;
@@ -16,9 +15,6 @@ public class B1P1E2 : DanmakuBehaviour {
   public Range FireRate = 5;
   public float FrameRate;
   public Arc Arc;
-  public Circle Circle;
-  public Line Line;
-  public Ring Ring;
 
   float timer;
   DanmakuConfig config;
@@ -35,7 +31,9 @@ public class B1P1E2 : DanmakuBehaviour {
     }
     var set = CreateSet(DanmakuType);
     set.AddModifiers(GetComponents<IDanmakuModifier>());
-    fireable = Arc.Of(Circle).Of(Line).Of(Ring).Of(set);
+    if (fireable == null) {
+      fireable = Arc.Of(set);
+    }
   }
 
   /// <summary>
