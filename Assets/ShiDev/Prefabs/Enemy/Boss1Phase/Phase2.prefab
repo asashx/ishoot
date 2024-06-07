@@ -46,20 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DanmakuType: {fileID: 5816921885466667260, guid: 45af97bf98876714eaecba9d5deb7070, type: 3}
   Speed:
-    _min: 7
-    _max: 7
+    _min: 6.7
+    _max: 6.7
   AngularSpeed:
     _min: 0
     _max: 0
-  Color: {r: 0, g: 0.6320754, b: 0.02670604, a: 1}
+  Color: {r: 0.6313726, g: 0, b: 0.01176309, a: 1}
   FireRate:
     _min: 120
     _max: 120
   FrameRate: 0
   Ring:
     Count:
-      _min: 8
-      _max: 8
+      _min: 4
+      _max: 4
     Radius:
       _min: 0.5
       _max: 0.5
