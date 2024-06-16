@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4116058711949497645}
   - component: {fileID: 2033601507954225670}
   - component: {fileID: 5106038964312445561}
-  - component: {fileID: 5275934381305324071}
+  - component: {fileID: 8247884195107467680}
+  - component: {fileID: 6507127630713901310}
   m_Layer: 0
   m_Name: Bound&Drop Manager
   m_TagString: Finish
@@ -102,16 +103,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6165525671826450318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7814fe93d4b39540be33dad761dcaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 2031436951396914150, guid: 960d12faeeac59946927041cbc1d27b0, type: 3}
-  totalNumberOfPrefabsToSpawn: 10
-  spawnInterval: 0.001
-  spawnRadius: 3
---- !u!114 &5275934381305324071
+  obstaclePrefab: {fileID: 0}
+  obstacleSpeed: 5
+  obstacleLifetime: 10
+  obstacleSpawnInterval: 5
+--- !u!114 &8247884195107467680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,10 +121,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6165525671826450318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7814fe93d4b39540be33dad761dcaa0, type: 3}
+  m_Script: {fileID: 11500000, guid: ce73d688d6bfd294c819a3c28e7e961b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 2031436951396914150, guid: 960d12faeeac59946927041cbc1d27b0, type: 3}
+  totalNumberOfPrefabsToSpawn: 10
+  spawnInterval: 10
+  spawnRadius: 4
+--- !u!114 &6507127630713901310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165525671826450318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce73d688d6bfd294c819a3c28e7e961b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 582567498476220066, guid: 8393996c0521fd44ca8000c59642ac08, type: 3}
   totalNumberOfPrefabsToSpawn: 10
-  spawnInterval: 0.001
-  spawnRadius: 3
+  spawnInterval: 10
+  spawnRadius: 4

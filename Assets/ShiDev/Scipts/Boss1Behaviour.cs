@@ -293,4 +293,3 @@ public class Boss1Behaviour : MonoBehaviour
         // 比如播放死亡动画、销毁对象等
     }
 }
-
